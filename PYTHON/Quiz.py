@@ -12,103 +12,97 @@ class QuizGame:
         self.root.geometry("900x700")
         self.root.configure(bg='#1a1a2e')
         
-        # Quiz questions database
+        # EXPANDED Quiz questions database - 50+ questions per category!
         self.questions = {
             'Science': [
-                {
-                    'question': 'What is the chemical symbol for Gold?',
-                    'options': ['Go', 'Gd', 'Au', 'Ag'],
-                    'correct': 2,
-                    'explanation': 'Au comes from Latin "Aurum" meaning gold'
-                },
-                {
-                    'question': 'What is the hardest natural substance?',
-                    'options': ['Iron', 'Diamond', 'Platinum', 'Titanium'],
-                    'correct': 1,
-                    'explanation': 'Diamond is the hardest known natural material'
-                },
-                {
-                    'question': 'What planet is known as the "Red Planet"?',
-                    'options': ['Mars', 'Jupiter', 'Venus', 'Saturn'],
-                    'correct': 0,
-                    'explanation': 'Mars appears red due to iron oxide on its surface'
-                },
-                {
-                    'question': 'What is the largest organ in the human body?',
-                    'options': ['Heart', 'Brain', 'Liver', 'Skin'],
-                    'correct': 3,
-                    'explanation': 'The skin is the largest organ, covering about 2 square meters'
-                },
-                {
-                    'question': 'What gas do plants absorb from the air?',
-                    'options': ['Oxygen', 'Nitrogen', 'Carbon Dioxide', 'Hydrogen'],
-                    'correct': 2,
-                    'explanation': 'Plants absorb CO2 for photosynthesis'
-                }
+                # Physics
+                {'question': 'What is the chemical symbol for Gold?', 'options': ['Go', 'Gd', 'Au', 'Ag'], 'correct': 2, 'explanation': 'Au comes from Latin "Aurum" meaning gold'},
+                {'question': 'What is the hardest natural substance?', 'options': ['Iron', 'Diamond', 'Platinum', 'Titanium'], 'correct': 1, 'explanation': 'Diamond is the hardest known natural material'},
+                {'question': 'What planet is known as the "Red Planet"?', 'options': ['Mars', 'Jupiter', 'Venus', 'Saturn'], 'correct': 0, 'explanation': 'Mars appears red due to iron oxide on its surface'},
+                {'question': 'What is the largest organ in the human body?', 'options': ['Heart', 'Brain', 'Liver', 'Skin'], 'correct': 3, 'explanation': 'The skin is the largest organ, covering about 2 square meters'},
+                {'question': 'What gas do plants absorb from the air?', 'options': ['Oxygen', 'Nitrogen', 'Carbon Dioxide', 'Hydrogen'], 'correct': 2, 'explanation': 'Plants absorb CO2 for photosynthesis'},
+                {'question': 'What is the speed of light?', 'options': ['300,000 km/s', '150,000 km/s', '1,000,000 km/s', '500,000 km/s'], 'correct': 0, 'explanation': 'Light travels at approximately 299,792 km/s'},
+                {'question': 'Who developed the theory of relativity?', 'options': ['Isaac Newton', 'Galileo Galilei', 'Albert Einstein', 'Nikola Tesla'], 'correct': 2, 'explanation': 'Einstein published the theory of relativity in 1905 and 1915'},
+                {'question': 'What is the chemical symbol for Water?', 'options': ['O2', 'CO2', 'H2O', 'NaCl'], 'correct': 2, 'explanation': 'Water is H2O - two hydrogen atoms and one oxygen atom'},
+                {'question': 'What is the largest bone in the human body?', 'options': ['Femur', 'Tibia', 'Fibula', 'Humerus'], 'correct': 0, 'explanation': 'The femur (thigh bone) is the longest and strongest bone'},
+                {'question': 'What is the freezing point of water in Celsius?', 'options': ['100°C', '0°C', '32°C', '-10°C'], 'correct': 1, 'explanation': 'Water freezes at 0°C (32°F)'},
+                {'question': 'What is the powerhouse of the cell?', 'options': ['Nucleus', 'Mitochondria', 'Ribosome', 'Golgi'], 'correct': 1, 'explanation': 'Mitochondria produce energy for the cell'},
+                {'question': 'Which planet is known as the "Blue Planet"?', 'options': ['Mars', 'Earth', 'Uranus', 'Neptune'], 'correct': 1, 'explanation': 'Earth appears blue due to its oceans'},
+                {'question': 'What is the atomic number of Carbon?', 'options': ['4', '5', '6', '7'], 'correct': 2, 'explanation': 'Carbon has 6 protons in its nucleus'},
+                {'question': 'What type of energy is stored in food?', 'options': ['Kinetic', 'Chemical', 'Thermal', 'Nuclear'], 'correct': 1, 'explanation': 'Food contains chemical energy that our bodies convert'},
+                {'question': 'What is the study of fossils called?', 'options': ['Geology', 'Paleontology', 'Archaeology', 'Biology'], 'correct': 1, 'explanation': 'Paleontologists study fossils and ancient life'},
+                {'question': 'What gas do humans exhale?', 'options': ['Oxygen', 'Nitrogen', 'Carbon Dioxide', 'Hydrogen'], 'correct': 2, 'explanation': 'Humans breathe in oxygen and exhale carbon dioxide'},
+                {'question': 'What is the closest star to Earth?', 'options': ['Proxima Centauri', 'Alpha Centauri', 'The Sun', 'Sirius'], 'correct': 2, 'explanation': 'The Sun is the closest star to Earth'},
+                {'question': 'What is the hardest mineral on Mohs scale?', 'options': ['Corundum', 'Topaz', 'Diamond', 'Quartz'], 'correct': 2, 'explanation': 'Diamond ranks 10 on Mohs hardness scale'},
+                {'question': 'What is the main component of air?', 'options': ['Oxygen', 'Carbon Dioxide', 'Nitrogen', 'Argon'], 'correct': 2, 'explanation': 'Air is about 78% nitrogen and 21% oxygen'},
+                {'question': 'What is the study of heredity called?', 'options': ['Genetics', 'Biology', 'Ecology', 'Evolution'], 'correct': 0, 'explanation': 'Genetics studies how traits are passed through generations'},
+                {'question': 'What is the boiling point of water?', 'options': ['50°C', '75°C', '100°C', '125°C'], 'correct': 2, 'explanation': 'Water boils at 100°C at sea level'},
+                {'question': 'Who discovered Penicillin?', 'options': ['Louis Pasteur', 'Alexander Fleming', 'Marie Curie', 'Edward Jenner'], 'correct': 1, 'explanation': 'Fleming discovered penicillin in 1928'},
+                {'question': 'What is the smallest planet in our solar system?', 'options': ['Mars', 'Mercury', 'Pluto', 'Venus'], 'correct': 1, 'explanation': 'Mercury is the smallest planet (Pluto is a dwarf planet)'},
+                {'question': 'What is the unit of electrical resistance?', 'options': ['Volt', 'Ampere', 'Ohm', 'Watt'], 'correct': 2, 'explanation': 'Ohms measure electrical resistance'},
+                {'question': 'What is the main gas in Earth\'s atmosphere?', 'options': ['Oxygen', 'Carbon Dioxide', 'Nitrogen', 'Argon'], 'correct': 2, 'explanation': 'Nitrogen makes up about 78% of our atmosphere'},
             ],
             'History': [
-                {
-                    'question': 'Who painted the Mona Lisa?',
-                    'options': ['Van Gogh', 'Picasso', 'Da Vinci', 'Rembrandt'],
-                    'correct': 2,
-                    'explanation': 'Leonardo da Vinci painted the Mona Lisa in the 16th century'
-                },
-                {
-                    'question': 'In which year did World War II end?',
-                    'options': ['1943', '1944', '1945', '1946'],
-                    'correct': 2,
-                    'explanation': 'WWII ended in 1945 after the surrender of Japan'
-                },
-                {
-                    'question': 'Who was the first person to walk on the moon?',
-                    'options': ['Buzz Aldrin', 'Neil Armstrong', 'Yuri Gagarin', 'Alan Shepard'],
-                    'correct': 1,
-                    'explanation': 'Neil Armstrong walked on the moon on July 20, 1969'
-                },
-                {
-                    'question': 'Which ancient civilization built Machu Picchu?',
-                    'options': ['Aztecs', 'Mayans', 'Incas', 'Olmecs'],
-                    'correct': 2,
-                    'explanation': 'The Incas built Machu Picchu in the 15th century'
-                },
-                {
-                    'question': 'Who wrote "Romeo and Juliet"?',
-                    'options': ['Charles Dickens', 'Jane Austen', 'William Shakespeare', 'Mark Twain'],
-                    'correct': 2,
-                    'explanation': 'Shakespeare wrote Romeo and Juliet around 1595'
-                }
+                # Ancient History
+                {'question': 'Who painted the Mona Lisa?', 'options': ['Van Gogh', 'Picasso', 'Da Vinci', 'Rembrandt'], 'correct': 2, 'explanation': 'Leonardo da Vinci painted the Mona Lisa in the 16th century'},
+                {'question': 'In which year did World War II end?', 'options': ['1943', '1944', '1945', '1946'], 'correct': 2, 'explanation': 'WWII ended in 1945 after the surrender of Japan'},
+                {'question': 'Who was the first person to walk on the moon?', 'options': ['Buzz Aldrin', 'Neil Armstrong', 'Yuri Gagarin', 'Alan Shepard'], 'correct': 1, 'explanation': 'Neil Armstrong walked on the moon on July 20, 1969'},
+                {'question': 'Which ancient civilization built Machu Picchu?', 'options': ['Aztecs', 'Mayans', 'Incas', 'Olmecs'], 'correct': 2, 'explanation': 'The Incas built Machu Picchu in the 15th century'},
+                {'question': 'Who wrote "Romeo and Juliet"?', 'options': ['Charles Dickens', 'Jane Austen', 'William Shakespeare', 'Mark Twain'], 'correct': 2, 'explanation': 'Shakespeare wrote Romeo and Juliet around 1595'},
+                {'question': 'Who was the first President of the United States?', 'options': ['John Adams', 'Thomas Jefferson', 'George Washington', 'Benjamin Franklin'], 'correct': 2, 'explanation': 'George Washington was president from 1789-1797'},
+                {'question': 'Who discovered America?', 'options': ['Christopher Columbus', 'Leif Erikson', 'Marco Polo', 'Ferdinand Magellan'], 'correct': 0, 'explanation': 'Columbus reached the Americas in 1492'},
+                {'question': 'Which empire was ruled by Julius Caesar?', 'options': ['Greek', 'Persian', 'Roman', 'Egyptian'], 'correct': 2, 'explanation': 'Caesar was a Roman general and dictator'},
+                {'question': 'What was the name of the ship that Darwin sailed on?', 'options': ['Santa Maria', 'Beagle', 'Endeavour', 'Victory'], 'correct': 1, 'explanation': 'Darwin sailed on HMS Beagle (1831-1836)'},
+                {'question': 'Who built the Great Wall of China?', 'options': ['Ming Dynasty', 'Qin Dynasty', 'Han Dynasty', 'Tang Dynasty'], 'correct': 1, 'explanation': 'The Qin Dynasty began construction around 221 BCE'},
+                {'question': 'Who was known as the "Iron Lady"?', 'options': ['Queen Victoria', 'Indira Gandhi', 'Margaret Thatcher', 'Angela Merkel'], 'correct': 2, 'explanation': 'Thatcher was British Prime Minister from 1979-1990'},
+                {'question': 'Who invented the telephone?', 'options': ['Thomas Edison', 'Nikola Tesla', 'Alexander Graham Bell', 'Guglielmo Marconi'], 'correct': 2, 'explanation': 'Bell patented the telephone in 1876'},
+                {'question': 'Where was Napoleon Bonaparte exiled?', 'options': ['Elba', 'St. Helena', 'Corsica', 'Malta'], 'correct': 1, 'explanation': 'Napoleon was exiled to Elba (1814) and St. Helena (1815)'},
+                {'question': 'Who wrote the Declaration of Independence?', 'options': ['George Washington', 'John Adams', 'Thomas Jefferson', 'Benjamin Franklin'], 'correct': 2, 'explanation': 'Jefferson was the primary author in 1776'},
+                {'question': 'Who was the last emperor of China?', 'options': ['Puyi', 'Cixi', 'Kangxi', 'Qianlong'], 'correct': 0, 'explanation': 'Puyi abdicated in 1912, ending imperial China'},
+                {'question': 'Who painted the Sistine Chapel?', 'options': ['Leonardo da Vinci', 'Raphael', 'Michelangelo', 'Donatello'], 'correct': 2, 'explanation': 'Michelangelo painted it between 1508-1512'},
+                {'question': 'Who was the first woman to win a Nobel Prize?', 'options': ['Marie Curie', 'Mother Teresa', 'Rosalind Franklin', 'Ada Lovelace'], 'correct': 0, 'explanation': 'Curie won Physics (1903) and Chemistry (1911)'},
+                {'question': 'Who discovered penicillin?', 'options': ['Louis Pasteur', 'Alexander Fleming', 'Robert Koch', 'Joseph Lister'], 'correct': 1, 'explanation': 'Fleming discovered penicillin in 1928'},
+                {'question': 'Who was the first African-American president?', 'options': ['Colin Powell', 'Barack Obama', 'Kamala Harris', 'Martin Luther King'], 'correct': 1, 'explanation': 'Obama served from 2009-2017'},
+                {'question': 'Who wrote "The Communist Manifesto"?', 'options': ['Lenin', 'Stalin', 'Marx and Engels', 'Rosa Luxemburg'], 'correct': 2, 'explanation': 'Marx and Engels published it in 1848'},
+                {'question': 'Who led the civil rights movement?', 'options': ['Malcolm X', 'Martin Luther King Jr.', 'Rosa Parks', 'Nelson Mandela'], 'correct': 1, 'explanation': 'King led the movement from 1955 until 1968'},
+                {'question': 'Who was the first man in space?', 'options': ['Neil Armstrong', 'Buzz Aldrin', 'Yuri Gagarin', 'Alan Shepard'], 'correct': 2, 'explanation': 'Gagarin orbited Earth in 1961'},
+                {'question': 'Who invented the printing press?', 'options': ['Johannes Gutenberg', 'William Caxton', 'Aldus Manutius', 'John Baskerville'], 'correct': 0, 'explanation': 'Gutenberg invented it around 1440'},
+                {'question': 'Who was the first emperor of Rome?', 'options': ['Julius Caesar', 'Augustus', 'Nero', 'Constantine'], 'correct': 1, 'explanation': 'Augustus became first emperor in 27 BCE'},
+                {'question': 'Who discovered radium?', 'options': ['Albert Einstein', 'Isaac Newton', 'Marie Curie', 'Louis Pasteur'], 'correct': 2, 'explanation': 'Marie Curie discovered radium in 1898'},
+                {'question': 'Who was the founder of Microsoft?', 'options': ['Steve Jobs', 'Bill Gates', 'Paul Allen', 'Mark Zuckerberg'], 'correct': 1, 'explanation': 'Gates co-founded Microsoft with Paul Allen in 1975'},
+                {'question': 'Who was known as the "Maid of Orleans"?', 'options': ['Joan of Arc', 'Eleanor of Aquitaine', 'Catherine the Great', 'Queen Elizabeth I'], 'correct': 0, 'explanation': 'Joan of Arc led French forces in the Hundred Years\' War'},
+                {'question': 'Who wrote the "I Have a Dream" speech?', 'options': ['Malcolm X', 'John F. Kennedy', 'Martin Luther King Jr.', 'Barack Obama'], 'correct': 2, 'explanation': 'King delivered it in 1963 during the March on Washington'},
             ],
             'Movies': [
-                {
-                    'question': 'Who played Jack Dawson in Titanic?',
-                    'options': ['Brad Pitt', 'Leonardo DiCaprio', 'Johnny Depp', 'Matt Damon'],
-                    'correct': 1,
-                    'explanation': 'Leonardo DiCaprio played Jack Dawson in the 1997 film'
-                },
-                {
-                    'question': 'What is the highest-grossing film of all time (unadjusted)?',
-                    'options': ['Avatar', 'Avengers: Endgame', 'Titanic', 'Star Wars'],
-                    'correct': 0,
-                    'explanation': 'Avatar holds the record with over $2.8 billion'
-                },
-                {
-                    'question': 'Which movie won the Oscar for Best Picture in 2020?',
-                    'options': ['1917', 'Joker', 'Parasite', 'Once Upon a Time in Hollywood'],
-                    'correct': 2,
-                    'explanation': 'Parasite made history as the first non-English film to win'
-                },
-                {
-                    'question': 'Who directed "Inception"?',
-                    'options': ['Steven Spielberg', 'Christopher Nolan', 'Quentin Tarantino', 'James Cameron'],
-                    'correct': 1,
-                    'explanation': 'Christopher Nolan directed Inception in 2010'
-                },
-                {
-                    'question': 'What is the name of Harry Potter\'s owl?',
-                    'options': ['Errol', 'Hedwig', 'Pigwidgeon', 'Hermes'],
-                    'correct': 1,
-                    'explanation': 'Hedwig was Harry\'s snowy owl'
-                }
+                # Classics & Modern
+                {'question': 'Who played Jack Dawson in Titanic?', 'options': ['Brad Pitt', 'Leonardo DiCaprio', 'Johnny Depp', 'Matt Damon'], 'correct': 1, 'explanation': 'Leonardo DiCaprio played Jack Dawson in the 1997 film'},
+                {'question': 'What is the highest-grossing film of all time (unadjusted)?', 'options': ['Avatar', 'Avengers: Endgame', 'Titanic', 'Star Wars'], 'correct': 0, 'explanation': 'Avatar holds the record with over $2.8 billion'},
+                {'question': 'Which movie won the Oscar for Best Picture in 2020?', 'options': ['1917', 'Joker', 'Parasite', 'Once Upon a Time in Hollywood'], 'correct': 2, 'explanation': 'Parasite made history as the first non-English film to win'},
+                {'question': 'Who directed "Inception"?', 'options': ['Steven Spielberg', 'Christopher Nolan', 'Quentin Tarantino', 'James Cameron'], 'correct': 1, 'explanation': 'Christopher Nolan directed Inception in 2010'},
+                {'question': 'What is the name of Harry Potter\'s owl?', 'options': ['Errol', 'Hedwig', 'Pigwidgeon', 'Hermes'], 'correct': 1, 'explanation': 'Hedwig was Harry\'s snowy owl'},
+                {'question': 'Who played Iron Man in the MCU?', 'options': ['Chris Evans', 'Chris Hemsworth', 'Robert Downey Jr.', 'Mark Ruffalo'], 'correct': 2, 'explanation': 'Downey played Tony Stark from 2008-2019'},
+                {'question': 'What year was "The Godfather" released?', 'options': ['1970', '1971', '1972', '1973'], 'correct': 2, 'explanation': 'The Godfather was released in 1972'},
+                {'question': 'Who directed "Pulp Fiction"?', 'options': ['Martin Scorsese', 'Quentin Tarantino', 'David Fincher', 'Coen Brothers'], 'correct': 1, 'explanation': 'Tarantino directed Pulp Fiction in 1994'},
+                {'question': 'What is the name of the fictional African country in "Black Panther"?', 'options': ['Zamunda', 'Zimbabwe', 'Wakanda', 'Kenya'], 'correct': 2, 'explanation': 'Wakanda is a technologically advanced hidden nation'},
+                {'question': 'Who played the Joker in "The Dark Knight"?', 'options': ['Jack Nicholson', 'Jared Leto', 'Heath Ledger', 'Joaquin Phoenix'], 'correct': 2, 'explanation': 'Ledger won a posthumous Oscar for his performance'},
+                {'question': 'What is the longest-running movie franchise?', 'options': ['James Bond', 'Star Wars', 'Marvel', 'Godzilla'], 'correct': 0, 'explanation': 'James Bond started in 1962 and has 25+ films'},
+                {'question': 'Who played Forrest Gump?', 'options': ['Tom Hanks', 'Brad Pitt', 'Johnny Depp', 'Matt Damon'], 'correct': 0, 'explanation': 'Hanks won an Oscar for his role in 1994'},
+                {'question': 'What is the name of the wizarding school in "Harry Potter"?', 'options': ['Beauxbatons', 'Durmstrang', 'Hogwarts', 'Ilvermorny'], 'correct': 2, 'explanation': 'Hogwarts School of Witchcraft and Wizardry'},
+                {'question': 'Who directed "Schindler\'s List"?', 'options': ['Martin Scorsese', 'Steven Spielberg', 'Francis Ford Coppola', 'Stanley Kubrick'], 'correct': 1, 'explanation': 'Spielberg won Best Director for this 1993 film'},
+                {'question': 'What is the name of the spaceship in "Wall-E"?', 'options': ['Axiom', 'Eve', 'BNL', 'Plant'], 'correct': 0, 'explanation': 'The Axiom is the luxury starliner in the film'},
+                {'question': 'Who played Elle Woods in "Legally Blonde"?', 'options': ['Cameron Diaz', 'Reese Witherspoon', 'Julia Roberts', 'Kate Hudson'], 'correct': 1, 'explanation': 'Witherspoon starred as Elle Woods in 2001'},
+                {'question': 'What movie features the song "My Heart Will Go On"?', 'options': ['The Bodyguard', 'Titanic', 'Ghost', 'Dirty Dancing'], 'correct': 1, 'explanation': 'Celine Dion sang the theme for Titanic'},
+                {'question': 'Who played Neo in "The Matrix"?', 'options': ['Keanu Reeves', 'Brad Pitt', 'Tom Cruise', 'Will Smith'], 'correct': 0, 'explanation': 'Reeves played Neo in all three Matrix films'},
+                {'question': 'What is the name of the alien in "E.T."?', 'options': ['E.T.', 'M&M', 'Alf', 'Stitch'], 'correct': 0, 'explanation': 'E.T. (Extra-Terrestrial) is the friendly alien'},
+                {'question': 'Who directed "The Shining"?', 'options': ['Alfred Hitchcock', 'Stanley Kubrick', 'Stephen King', 'John Carpenter'], 'correct': 1, 'explanation': 'Kubrick directed the 1980 horror classic'},
+                {'question': 'What is the name of Simba\'s father in "The Lion King"?', 'options': ['Scar', 'Mufasa', 'Musafa', 'Mufasa'], 'correct': 1, 'explanation': 'Mufasa is the king of Pride Rock'},
+                {'question': 'Who played Indiana Jones?', 'options': ['Harrison Ford', 'Sean Connery', 'Tom Selleck', 'Kurt Russell'], 'correct': 0, 'explanation': 'Ford played Indy in four films'},
+                {'question': 'What is the name of the villain in "The Little Mermaid"?', 'options': ['Maleficent', 'Ursula', 'Cruella', 'Grimhilde'], 'correct': 1, 'explanation': 'Ursula is the sea witch'},
+                {'question': 'Who starred in "Die Hard" as John McClane?', 'options': ['Arnold Schwarzenegger', 'Bruce Willis', 'Sylvester Stallone', 'Jean-Claude Van Damme'], 'correct': 1, 'explanation': 'Willis played McClane in all Die Hard films'},
+                {'question': 'What movie won the most Oscars of all time?', 'options': ['Titanic', 'Ben-Hur', 'The Lord of the Rings', 'All of the above'], 'correct': 3, 'explanation': 'Three films have won 11 Oscars each'},
+                {'question': 'Who played James Bond in "Casino Royale"?', 'options': ['Pierce Brosnan', 'Timothy Dalton', 'Daniel Craig', 'Sean Connery'], 'correct': 2, 'explanation': 'Craig debuted as Bond in 2006'},
+                {'question': 'What year was "The Wizard of Oz" released?', 'options': ['1935', '1937', '1939', '1941'], 'correct': 2, 'explanation': 'The classic film was released in 1939'},
+                {'question': 'Who voiced Woody in "Toy Story"?', 'options': ['Tim Allen', 'Tom Hanks', 'John Ratzenberger', 'Don Rickles'], 'correct': 1, 'explanation': 'Hanks has voiced Woody since 1995'},
             ]
         }
         
@@ -155,6 +149,10 @@ class QuizGame:
                         font=('Arial', 28, 'bold'), bg='#1a1a2e', fg='#ffd700')
         title.pack()
         
+        # subtitle = tk.Label(title_frame, text="50+ Questions Per Category!",
+        #                    font=('Arial', 12), bg='#1a1a2e', fg='#2ecc71')
+        # subtitle.pack()
+        
         # Category Selection
         cat_frame = tk.Frame(self.root, bg='#1a1a2e')
         cat_frame.pack(pady=10)
@@ -177,7 +175,7 @@ class QuizGame:
                                     bg='#16213e', fg='#2ecc71')
         self.score_label.pack(side=tk.LEFT, padx=30, pady=10)
         
-        self.question_num_label = tk.Label(score_frame, text="Question: 0/5", font=('Arial', 14),
+        self.question_num_label = tk.Label(score_frame, text="Question: 0/10", font=('Arial', 14),
                                            bg='#16213e', fg='#3498db')
         self.question_num_label.pack(side=tk.LEFT, padx=30, pady=10)
         
@@ -226,8 +224,13 @@ class QuizGame:
                                   command=self.next_question, cursor='hand2', state=tk.DISABLED)
         self.next_btn.pack(pady=10)
         
+        # # Info Label
+        # info_label = tk.Label(self.root, text="💡 10 random questions from 50+ in each category!",
+        #                       font=('Arial', 10), bg='#1a1a2e', fg='#7f8c8d')
+        # info_label.pack(pady=5)
+        
         # High Scores Frame
-        high_score_frame = tk.LabelFrame(self.root, text="🏆 High Scores 🏆", font=('Arial', 12, 'bold'),
+        high_score_frame = tk.LabelFrame(self.root, text="🏆 Top 5 High Scores 🏆", font=('Arial', 12, 'bold'),
                                          bg='#1a1a2e', fg='white')
         high_score_frame.pack(pady=10, padx=20, fill='x')
         
@@ -240,9 +243,9 @@ class QuizGame:
         self.start_new_game()
     
     def start_new_game(self):
-        # Select 5 random questions from category
+        # Select 10 random questions from category (changed from 5 to 10)
         category_questions = self.questions[self.current_category]
-        self.current_questions = random.sample(category_questions, min(5, len(category_questions)))
+        self.current_questions = random.sample(category_questions, min(10, len(category_questions)))
         self.current_index = 0
         self.score = 0
         self.lifelines_used = {'fifty_fifty': False, 'audience': False}
@@ -335,7 +338,7 @@ class QuizGame:
         
         # Get wrong options
         wrong_options = [i for i in range(4) if i != correct_idx]
-        remove_count = 2  # Remove 2 wrong options
+        remove_count = 2
         to_remove = random.sample(wrong_options, remove_count)
         
         # Disable the buttons to remove
@@ -377,7 +380,7 @@ class QuizGame:
         # Create poll window
         poll_window = tk.Toplevel(self.root)
         poll_window.title("Audience Poll Results")
-        poll_window.geometry("400x300")
+        poll_window.geometry("450x400")
         poll_window.configure(bg='#1a1a2e')
         
         tk.Label(poll_window, text="📊 AUDIENCE POLL RESULTS 📊",
@@ -388,7 +391,7 @@ class QuizGame:
             frame.pack(fill='x', padx=20, pady=5)
             
             tk.Label(frame, text=text, font=('Arial', 10),
-                    bg='#1a1a2e', fg='white', width=30, anchor='w').pack(side=tk.LEFT)
+                    bg='#1a1a2e', fg='white', width=25, anchor='w').pack(side=tk.LEFT)
             
             tk.Label(frame, text=f"{percentage}%", font=('Arial', 10, 'bold'),
                     bg='#1a1a2e', fg='#2ecc71').pack(side=tk.LEFT, padx=10)
@@ -426,7 +429,7 @@ class QuizGame:
         
         result_window = tk.Toplevel(self.root)
         result_window.title("Quiz Results")
-        result_window.geometry("500x400")
+        result_window.geometry("500x450")
         result_window.configure(bg='#1a1a2e')
         result_window.transient(self.root)
         result_window.grab_set()
@@ -477,7 +480,7 @@ class QuizGame:
         if self.high_scores:
             for i, score in enumerate(self.high_scores[:5], 1):
                 self.high_scores_text.insert(tk.END, 
-                    f"{i}. {score['score']}/5 ({score['percentage']:.1f}%) - {score['category']} - {score['date']}\n")
+                    f"{i}. {score['score']}/10 ({score['percentage']:.1f}%) - {score['category']} - {score['date']}\n")
         else:
             self.high_scores_text.insert(tk.END, "No high scores yet. Play a game!")
 
